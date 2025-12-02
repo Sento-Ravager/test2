@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Audio Player Of Mine</h1>
+    <h1>Pick Song Of The Day - 116, <a style="color: blue;">NEXT FRONTIER</a></h1>
+    <img src="uma-musume.gif" class="img-thumbnail img-responsive,img-fluid float-start ms-3" alt="Gambar malas ngoding" width="304" height="236">
+    
+    <!-- Example: tombol untuk memutar suara -->
+    <div style="margin-top:20px;">
+        <button id="playBtn" class="btn btn-success">Play Song</button>
+        <button id="pauseBtn" class="btn btn-secondary">Pause</button>
+        <button id="stopBtn" class="btn btn-danger">Stop</button>
+    </div>
+
+    <!-- letakkan file 'song.mp3' di folder yang sama, atau ganti src dengan URL -->
+    <audio id="audioPlayer" src="NEXT FRONTIER - Copy.mp3" preload="auto"></audio>
+
+    <script>
+        const audio = document.getElementById('audioPlayer');
+        document.getElementById('playBtn').addEventListener('click', () => {
+            audio.currentTime = audio.currentTime; // resume where left off
+            audio.play();
+        });
+        document.getElementById('pauseBtn').addEventListener('click', () => {
+            audio.pause();
+        });
+        document.getElementById('stopBtn').addEventListener('click', () => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+    </script>
+</body>
+</html>
